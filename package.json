@@ -1,0 +1,22 @@
+{
+	"name": "suawek013.github.io",
+	"version": "1.0.0",
+	"description": "Portfolio",
+	"main": "index.js",
+	"scripts": {
+		"sass": "node-sass -w scss/ -o css/ --recursive"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Suawek013/suawek013.github.io.git"
+	},
+	"author": "Sławomir Sojka",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/Suawek013/suawek013.github.io/issues"
+	},
+	"homepage": "https://github.com/Suawek013/suawek013.github.io#readme",
+	"dependencies": {
+		"node-sass": "^6.0.0"
+	}
+}
