@@ -1,3 +1,44 @@
+$font-main: "Josefin Sans", sans-serif;
+$font-header: "Caveat", cursive;
+$font-paragraph: "Quicksand", sans-serif;
+
+$header-color: #e99904;
+$main-color: #aad11c;
+$content-color: #d1a71c;
+$footer-color: rgb(61, 61, 61);
+$primary-color: #932ce7;
+$secondary-color: #e9d204;
+
+@mixin phone {
+	@media (max-width: 599px) {
+		@content;
+	}
+}
+
+@mixin tablet {
+	@media (min-width: 600px) {
+		@content;
+	}
+}
+
+@mixin tablet-up {
+	@media (min-width: 900px) {
+		@content;
+	}
+}
+
+@mixin desktop {
+	@media (min-width: 1200px) {
+		@content;
+	}
+}
+
+@mixin desktop-up {
+	@media (min-width: 1800px) {
+		@content;
+	}
+}
+
 *,
 *:after,
 *:before {
@@ -16,12 +57,12 @@ font-family: "Quicksand", sans-serif; */
 /* font-family: 'Amatic SC', cursive;
 font-family: 'Caveat', cursive; <--- better*/
 body {
-	font-family: "Josefin Sans", sans-serif;
+	font-family: $font-main;
 	margin: 0;
 	padding: 0;
 	font-size: 100%;
 	display: grid;
-	grid-template-rows: 6rem 1000px auto;
+	grid-template-rows: 6rem min-content auto;
 	grid-template-areas:
 		"header"
 		"main"
@@ -33,7 +74,7 @@ header {
 	width: 100%;
 	padding: 0.6rem;
 	font-size: 1.4rem;
-	background-color: #e9c904;
+	background-color: $header-color;
 	color: #fff;
 	grid-area: header;
 }
@@ -50,35 +91,56 @@ header {
 }
 .item {
 	list-style-type: none;
-}
-.item a {
-	text-decoration: none;
-	color: #fff;
+	a {
+		text-decoration: none;
+		color: #fff;
+	}
 }
 main {
 	grid-area: main;
 	overflow: hidden;
-	background-color: #8fc33a;
+	background-color: $main-color;
 }
 .main--background-container {
 	position: relative;
-	height: 75vh;
-	overflow: hidden;
-	transform: skew(-50deg);
-}
 
-.main--background-container::before {
-	content: "";
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	/* What to do with top: -50% and left -50%??? */
-	background: url(../images/PortfolioEditedCutShadow.jpg) no-repeat;
-	background-position: 0 -30%;
-	background-attachment: fixed;
-	z-index: -1;
-	background-size: 100%;
-	transform: skew(50deg);
+	&::before {
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background: url(../images/PortfolioEditedCutShadow.jpg) no-repeat;
+		z-index: -1;
+		background-size: cover;
+		transform: skew(50deg);
+	}
+
+	@include phone() {
+		height: 75vh;
+		transform: skew(-50deg);
+		&::before {
+			background-position: 46% 50%;
+		}
+	}
+
+	@include tablet() {
+		height: 75vh;
+		transform: skew(-50deg);
+		// Skew to delete (unused with visibility not hidden)
+		&::before {
+			background-position: 46% 50%;
+		}
+	}
+	@include desktop() {
+		height: 90vh;
+		overflow: hidden;
+		transform: skew(-50deg);
+
+		&::before {
+			background-position: 0 70px;
+			background-attachment: fixed;
+		}
+	}
 }
 
 .background--content {
@@ -95,40 +157,50 @@ main {
 	text-shadow: 1px 1px 1px #000;
 	z-index: 1;
 	text-align: center;
+
+	h2 {
+		font-family: $font-header;
+		margin: 0;
+		padding: 20px;
+		position: relative;
+	}
+	h2:after,
+	h2:before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 50%;
+		width: 400px;
+		height: 3px;
+		background: #fff;
+		transform: translateX(-50%);
+	}
+	h2:before {
+		top: auto;
+		bottom: 0;
+	}
 }
-.background--content h2 {
-	font-family: "Caveat", cursive;
-	margin: 0;
-	padding: 20px;
-	position: relative;
+.content {
+	background-color: $content-color;
+	article {
+		padding: 2.5rem;
+		min-height: 30vh;
+	}
 }
-.background--content h2:after,
-.background--content h2:before {
-	content: "";
-	position: absolute;
-	top: 0;
-	left: 50%;
-	width: 400px;
-	height: 3px;
-	background: #fff;
-	transform: translateX(-50%);
+.content--article__primary {
+	background-color: $primary-color;
+	p {
+		color: white;
+		margin: 0;
+	}
 }
-.background--content h2:before {
-	top: auto;
-	bottom: 0;
+.content--article__secondary {
+	background-color: $secondary-color;
 }
 
-.content {
-	height: 100px;
-	background-color: #62edd6;
-}
-.content p {
-	color: white;
-	margin: 0;
-}
 footer {
 	grid-area: footer;
-	background-color: rgb(61, 61, 61);
+	background-color: $footer-color;
 	color: #fff;
 	padding: 1rem;
 	text-align: center;

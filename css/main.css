@@ -20,7 +20,7 @@ body {
   padding: 0;
   font-size: 100%;
   display: grid;
-  grid-template-rows: 6rem 1000px auto;
+  grid-template-rows: 6rem min-content auto;
   grid-template-areas: "header" "main" "footer"; }
 
 header {
@@ -29,7 +29,7 @@ header {
   width: 100%;
   padding: 0.6rem;
   font-size: 1.4rem;
-  background-color: #e9c904;
+  background-color: #e99904;
   color: #fff;
   grid-area: header; }
 
@@ -45,34 +45,46 @@ header {
 
 .item {
   list-style-type: none; }
-
-.item a {
-  text-decoration: none;
-  color: #fff; }
+  .item a {
+    text-decoration: none;
+    color: #fff; }
 
 main {
   grid-area: main;
   overflow: hidden;
-  background-color: #8fc33a; }
+  background-color: #aad11c; }
 
 .main--background-container {
-  position: relative;
-  height: 75vh;
-  overflow: hidden;
-  transform: skew(-50deg); }
-
-.main--background-container::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  /* What to do with top: -50% and left -50%??? */
-  background: url(../images/PortfolioEditedCutShadow.jpg) no-repeat;
-  background-position: 0 -30%;
-  background-attachment: fixed;
-  z-index: -1;
-  background-size: 100%;
-  transform: skew(50deg); }
+  position: relative; }
+  .main--background-container::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url(../images/PortfolioEditedCutShadow.jpg) no-repeat;
+    z-index: -1;
+    background-size: cover;
+    transform: skew(50deg); }
+  @media (max-width: 599px) {
+    .main--background-container {
+      height: 75vh;
+      transform: skew(-50deg); }
+      .main--background-container::before {
+        background-position: 46% 50%; } }
+  @media (min-width: 600px) {
+    .main--background-container {
+      height: 75vh;
+      transform: skew(-50deg); }
+      .main--background-container::before {
+        background-position: 46% 50%; } }
+  @media (min-width: 1200px) {
+    .main--background-container {
+      height: 90vh;
+      overflow: hidden;
+      transform: skew(-50deg); }
+      .main--background-container::before {
+        background-position: 0 70px;
+        background-attachment: fixed; } }
 
 .background--content {
   /* background: url(./images/—Pngtree—blue\ 3d\ paint\ brush\ element_5322257.png);
@@ -88,35 +100,39 @@ main {
   text-shadow: 1px 1px 1px #000;
   z-index: 1;
   text-align: center; }
-
-.background--content h2 {
-  font-family: "Caveat", cursive;
-  margin: 0;
-  padding: 20px;
-  position: relative; }
-
-.background--content h2:after,
-.background--content h2:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 400px;
-  height: 3px;
-  background: #fff;
-  transform: translateX(-50%); }
-
-.background--content h2:before {
-  top: auto;
-  bottom: 0; }
+  .background--content h2 {
+    font-family: "Caveat", cursive;
+    margin: 0;
+    padding: 20px;
+    position: relative; }
+  .background--content h2:after,
+  .background--content h2:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 400px;
+    height: 3px;
+    background: #fff;
+    transform: translateX(-50%); }
+  .background--content h2:before {
+    top: auto;
+    bottom: 0; }
 
 .content {
-  height: 100px;
-  background-color: #62edd6; }
+  background-color: #d1a71c; }
+  .content article {
+    padding: 2.5rem;
+    min-height: 30vh; }
 
-.content p {
-  color: white;
-  margin: 0; }
+.content--article__primary {
+  background-color: #932ce7; }
+  .content--article__primary p {
+    color: white;
+    margin: 0; }
+
+.content--article__secondary {
+  background-color: #e9d204; }
 
 footer {
   grid-area: footer;
