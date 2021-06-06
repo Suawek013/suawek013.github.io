@@ -10,6 +10,9 @@ $primary-color: rgb(53, 53, 53);
 $secondary-color: rgb(255, 238, 0);
 $link-hover: #000;
 
+$text-primary: rgb(255, 0, 179);
+$text-secondary: rgb(217, 255, 0);
+
 @mixin phone {
 	@media (max-width: 599px) {
 		@content;
@@ -89,18 +92,40 @@ body {
 		"main"
 		"footer";
 }
+::-webkit-scrollbar {
+	width: 10px;
+}
+::-webkit-scrollbar-track {
+	background: $main-color;
+}
+::-webkit-scrollbar-thumb {
+	background: #888;
+}
+::-webkit-scrollbar-thumb:hover {
+	background: #555;
+}
 header {
 	position: fixed;
 	z-index: 1;
 	width: 100%;
-	padding: 0.2rem;
+	padding: 0.7rem;
 	font-size: 1.4rem;
 	background-color: $header-color;
 	color: #fff;
 	grid-area: header;
-	@include box-shadow(6px, 5px, 21px, 1px, #000000);
+	@include box-shadow(0px, 5px, 21px, 1px, #000000);
 }
 
+.text--primary {
+	color: $text-primary;
+}
+.text--secondary {
+	color: $text-secondary;
+}
+ul {
+	margin: 0;
+	padding: 0;
+}
 .menu {
 	display: flex;
 	list-style: none;
@@ -115,6 +140,9 @@ header {
 	.item {
 		display: block;
 	}
+	li:nth-child(2) {
+		border-top: 1px solid rgba(0, 0, 0, 0.13);
+	}
 	.logo {
 		margin-bottom: 1rem;
 	}
@@ -126,8 +154,14 @@ header {
 	a:hover {
 		color: $link-hover;
 	}
+	@include tablet-up() {
+		margin-bottom: 0.8rem;
+	}
 }
 .item {
+	/* font-family: "Josefin Sans", sans-serif;
+font-family: "Open Sans Condensed", sans-serif;
+font-family: "Quicksand", sans-serif; */
 	display: none;
 	list-style-type: none;
 	padding: 1rem;
@@ -150,7 +184,7 @@ a {
 .menu-btn {
 	position: absolute;
 	top: 0;
-	right: 4%;
+	right: 0;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -217,49 +251,38 @@ main {
 		width: 100%;
 		height: 100%;
 		background: url(../images/PortfolioEditedCutShadow.jpg) no-repeat;
-		z-index: -1;
 		background-size: cover;
-		transform: skew(50deg);
 	}
 
 	@include phone() {
 		height: 75vh;
-		transform: skew(-50deg);
 
 		&::before {
-			background-position: 46% 50%;
-			// -webkit-box-shadow: 5px 5px 15px 5px #000000;
-			// box-shadow: 5px 5px 15px 5px #000000;
+			clip-path: ellipse(90vw 60vh at 50% 18%);
+			background-position: 48% 50%;
 		}
 	}
 
 	@include tablet() {
-		height: 75vh;
-		transform: skew(-50deg);
+		height: 55vh;
 		// Skew to delete (unused with visibility not hidden)
 		&::before {
+			clip-path: ellipse(90vw 45vh at 50% 18%);
+
 			background-position: 46% 50%;
 		}
 	}
 	@include tablet-up() {
-		height: 70vh;
-		overflow: hidden;
-		transform: skew(-35deg);
 		&::before {
 			background-position: 50% 8%;
-			transform: skew(35deg);
 		}
 	}
 	@include desktop() {
 		height: 80vh;
-		overflow: hidden;
-		transform: skew(0deg);
-		// delete skew, alignt to right?
-
 		&::before {
+			clip-path: circle(50%);
 			width: 50%;
 			right: 0;
-			transform: skew(0deg);
 			background-size: contain;
 			background-position: 40vw 8vh;
 			background-attachment: fixed;
@@ -267,16 +290,11 @@ main {
 	}
 	@include desktop-up() {
 		height: 80vh;
-		overflow: hidden;
-		transform: skew(0deg);
-		// delete skew, alignt to right?
-
 		&::before {
 			width: 50%;
 			right: 0;
-			transform: skew(0deg);
 			background-size: contain;
-			background-position: 40vw 8vh;
+			background-position: 38vw 8vh;
 			background-attachment: fixed;
 		}
 	}
@@ -336,7 +354,7 @@ main {
 	background-color: $content-color;
 	article {
 		font-size: 1.2rem;
-		padding: 2.5rem;
+		padding: 3rem;
 		min-height: 30vh;
 	}
 	@include desktop() {
@@ -351,8 +369,10 @@ main {
 }
 .content--article__primary {
 	background-color: $primary-color;
-	p {
-		color: white;
+	color: white;
+
+	p,
+	h2 {
 		margin: 0;
 	}
 }
