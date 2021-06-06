@@ -5,9 +5,10 @@ $font-paragraph: "Quicksand", sans-serif;
 $header-color: #e99904;
 $main-color: rgb(53, 53, 53);
 $content-color: #d1a71c;
-$footer-color: rgb(61, 61, 61);
-$primary-color: #932ce7;
-$secondary-color: #e9d204;
+$footer-color: rgb(32, 32, 32);
+$primary-color: rgb(53, 53, 53);
+$secondary-color: rgb(255, 238, 0);
+$link-hover: #000;
 
 @mixin phone {
 	@media (max-width: 599px) {
@@ -36,6 +37,25 @@ $secondary-color: #e9d204;
 @mixin desktop-up {
 	@media (min-width: 1800px) {
 		@content;
+	}
+}
+
+@mixin box-shadow(
+	$top: 5px,
+	$left: 5px,
+	$spread: 15px,
+	$blur: 5px,
+	$color: #000,
+	$inset: false
+) {
+	@if $inset {
+		-webkit-box-shadow: inset $top $left $spread $blur $color;
+		-moz-box-shadow: inset $top $left $spread $blur $color;
+		box-shadow: inset $top $left $spread $blur $color;
+	} @else {
+		-webkit-box-shadow: $top $left $spread $blur $color;
+		-moz-box-shadow: $top $left $spread $blur $color;
+		box-shadow: $top $left $spread $blur $color;
 	}
 }
 
@@ -78,8 +98,7 @@ header {
 	background-color: $header-color;
 	color: #fff;
 	grid-area: header;
-	-webkit-box-shadow: 6px 5px 21px 1px #000000;
-	box-shadow: 6px 5px 21px 1px #000000;
+	@include box-shadow(6px, 5px, 21px, 1px, #000000);
 }
 
 .menu {
@@ -101,24 +120,31 @@ header {
 	}
 }
 .logo h1 {
+	font-size: 3rem;
+	font-family: $font-header;
 	margin: 0;
+	a:hover {
+		color: $link-hover;
+	}
 }
 .item {
 	display: none;
 	list-style-type: none;
 	padding: 1rem;
-	a {
-		text-decoration: none;
-		color: #fff;
-	}
+
 	a:hover {
-		color: rgb(0, 0, 0);
+		color: $link-hover;
 	}
 
 	@include tablet-up() {
 		display: block;
 		padding: 0;
 	}
+}
+
+a {
+	text-decoration: none;
+	color: #fff;
 }
 
 .menu-btn {
@@ -142,7 +168,7 @@ header {
 	height: 6px;
 	background: #fff;
 	border-radius: 5px;
-	box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
+	@include box-shadow(0, 2px, 5px, rgba(255, 101, 47, 0.2));
 	transition: all 0.5s ease-in-out;
 	&::before,
 	&::after {
@@ -152,7 +178,7 @@ header {
 		height: 6px;
 		background: #fff;
 		border-radius: 5px;
-		box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
+		@include box-shadow(0, 2px, 5px, rgba(255, 101, 47, 0.2));
 		transition: all 0.5s ease-in-out;
 	}
 	&::before {
@@ -217,75 +243,110 @@ main {
 	}
 	@include tablet-up() {
 		height: 70vh;
+		overflow: hidden;
+		transform: skew(-35deg);
 		&::before {
 			background-position: 50% 8%;
+			transform: skew(35deg);
 		}
 	}
 	@include desktop() {
-		height: 90vh;
+		height: 80vh;
 		overflow: hidden;
-		transform: skew(-50deg);
+		transform: skew(0deg);
 		// delete skew, alignt to right?
 
 		&::before {
-			background-position: 0 70px;
+			width: 50%;
+			right: 0;
+			transform: skew(0deg);
+			background-size: contain;
+			background-position: 40vw 8vh;
+			background-attachment: fixed;
+		}
+	}
+	@include desktop-up() {
+		height: 80vh;
+		overflow: hidden;
+		transform: skew(0deg);
+		// delete skew, alignt to right?
+
+		&::before {
+			width: 50%;
+			right: 0;
+			transform: skew(0deg);
+			background-size: contain;
+			background-position: 40vw 8vh;
 			background-attachment: fixed;
 		}
 	}
 }
+// TEXT ON IMAGE
+// .background--content {
+// 	// background: url(../images/gray-brush.png);
+// 	// background-repeat: no-repeat;
+// 	// background-position: 50% 50%;
+// 	// background-size: 100%;
+// 	position: absolute;
+// 	width: 100%;
+// 	height: 0;
+// 	left: 0;
+// 	top: 50%;
+// 	transform: translateY(-50%) skew(50deg);
+// 	font-size: 45px;
+// 	color: #fff;
+// 	text-shadow: 1px 1px 1px #000;
+// 	z-index: 1;
+// 	text-align: center;
 
-.background--content {
-	// background: url(../images/gray-brush.png);
-	// background-repeat: no-repeat;
-	// background-position: 50% 50%;
-	// background-size: 100%;
-	position: absolute;
-	width: 100%;
-	height: 0;
-	left: 0;
-	top: 50%;
-	transform: translateY(-50%) skew(50deg);
-	font-size: 45px;
-	color: #fff;
-	text-shadow: 1px 1px 1px #000;
-	z-index: 1;
-	text-align: center;
+// 	@include tablet-up() {
+// 		font-size: 50px;
+// 		transform: skew(35deg);
+// 	}
 
-	@include tablet-up() {
-		font-size: 50px;
-	}
+// 	h2 {
+// 		font-family: $font-header;
+// 		margin: 0;
+// 		padding: 20px;
+// 		position: relative;
+// 	}
+// 	h2:after,
+// 	h2:before {
+// 		@include box-shadow(5px, 4px, 15px, 2px, #000);
+// 		content: "";
+// 		position: absolute;
+// 		top: 0;
+// 		left: 50%;
+// 		width: 300px;
+// 		height: 3px;
+// 		background: #fff;
+// 		transform: translateX(-50%);
 
-	h2 {
-		font-family: $font-header;
-		margin: 0;
-		padding: 20px;
-		position: relative;
-	}
-	h2:after,
-	h2:before {
-		content: "";
-		position: absolute;
-		top: 0;
-		left: 50%;
-		width: 300px;
-		height: 3px;
-		background: #fff;
-		transform: translateX(-50%);
-
-		@include tablet-up() {
-			width: 400px;
-		}
-	}
-	h2:before {
-		top: auto;
-		bottom: 0;
-	}
-}
+// 		@include tablet-up() {
+// 			width: 400px;
+// 		}
+// 	}
+// 	h2:before {
+// 		@include box-shadow(5px, -4px, 15px, 2px, #000);
+// 		top: auto;
+// 		bottom: 0;
+// 	}
+// }
 .content {
 	background-color: $content-color;
 	article {
+		font-size: 1.2rem;
 		padding: 2.5rem;
 		min-height: 30vh;
+	}
+	@include desktop() {
+		article:first-child {
+			position: absolute;
+			top: 30%;
+			width: 50%;
+			font-size: 1.5rem;
+			background-color: transparent;
+		}
 	}
 }
 .content--article__primary {
