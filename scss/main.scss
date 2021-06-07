@@ -1,10 +1,11 @@
 $font-main: "Josefin Sans", sans-serif;
 $font-header: "Caveat", cursive;
+$font-subheader: "Amatic SC", cursive;
 $font-paragraph: "Quicksand", sans-serif;
 
 $header-color: #e99904;
 $main-color: rgb(53, 53, 53);
-$content-color: #d1a71c;
+$content-color: rgb(53, 53, 53);
 $footer-color: rgb(32, 32, 32);
 $primary-color: rgb(53, 53, 53);
 $secondary-color: rgb(255, 238, 0);
@@ -159,9 +160,6 @@ ul {
 	}
 }
 .item {
-	/* font-family: "Josefin Sans", sans-serif;
-font-family: "Open Sans Condensed", sans-serif;
-font-family: "Quicksand", sans-serif; */
 	display: none;
 	list-style-type: none;
 	padding: 1rem;
@@ -179,8 +177,8 @@ font-family: "Quicksand", sans-serif; */
 a {
 	text-decoration: none;
 	color: #fff;
+	transition: color 0.5s;
 }
-
 .menu-btn {
 	position: absolute;
 	top: 0;
@@ -192,7 +190,6 @@ a {
 	height: 80px;
 	cursor: pointer;
 	transition: all 0.5s ease-in-out;
-	/* border: 3px solid #fff; */
 	@include tablet-up() {
 		display: none;
 	}
@@ -268,13 +265,14 @@ main {
 		// Skew to delete (unused with visibility not hidden)
 		&::before {
 			clip-path: ellipse(90vw 45vh at 50% 18%);
-
-			background-position: 46% 50%;
+			background-position: 46% 20%;
 		}
 	}
 	@include tablet-up() {
+		height: 60vh;
 		&::before {
-			background-position: 50% 8%;
+			clip-path: ellipse(90vw 55vh at 50% 5%);
+			background-position: 50% 5%;
 		}
 	}
 	@include desktop() {
@@ -282,6 +280,7 @@ main {
 		&::before {
 			clip-path: circle(50%);
 			width: 50%;
+			height: 110%;
 			right: 0;
 			background-size: contain;
 			background-position: 40vw 8vh;
@@ -357,10 +356,17 @@ main {
 		padding: 3rem;
 		min-height: 30vh;
 	}
+	article h3 {
+		margin: 0;
+		margin-bottom: 1.5rem;
+		padding: 0;
+		font-size: 6rem;
+		font-family: $font-subheader;
+	}
 	@include desktop() {
 		article:first-child {
 			position: absolute;
-			top: 30%;
+			top: 10%;
 			width: 50%;
 			font-size: 1.5rem;
 			background-color: transparent;
@@ -377,6 +383,7 @@ main {
 	}
 }
 .content--article__secondary {
+	clip-path: polygon(0 0%, 100% 7%, 100% 93%, 0% 100%);
 	background-color: $secondary-color;
 }
 

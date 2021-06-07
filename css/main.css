@@ -106,9 +106,6 @@ ul {
 }
 
 .item {
-  /* font-family: "Josefin Sans", sans-serif;
-  font-family: "Open Sans Condensed", sans-serif;
-  font-family: "Quicksand", sans-serif; */
   display: none;
   list-style-type: none;
   padding: 1rem;
@@ -126,6 +123,7 @@ ul {
 a {
   text-decoration: none;
   color: #fff;
+  transition: color 0.5s;
 }
 
 .menu-btn {
@@ -139,7 +137,6 @@ a {
   height: 80px;
   cursor: pointer;
   transition: all 0.5s ease-in-out;
-  /* border: 3px solid #fff; */
 }
 @media (min-width: 900px) {
   .menu-btn {
@@ -220,12 +217,16 @@ main {
   }
   .main--background-container::before {
     clip-path: ellipse(90vw 45vh at 50% 18%);
-    background-position: 46% 50%;
+    background-position: 46% 20%;
   }
 }
 @media (min-width: 900px) {
+  .main--background-container {
+    height: 60vh;
+  }
   .main--background-container::before {
-    background-position: 50% 8%;
+    clip-path: ellipse(90vw 55vh at 50% 5%);
+    background-position: 50% 5%;
   }
 }
 @media (min-width: 1200px) {
@@ -235,6 +236,7 @@ main {
   .main--background-container::before {
     clip-path: circle(50%);
     width: 50%;
+    height: 110%;
     right: 0;
     background-size: contain;
     background-position: 40vw 8vh;
@@ -255,17 +257,24 @@ main {
 }
 
 .content {
-  background-color: #d1a71c;
+  background-color: #353535;
 }
 .content article {
   font-size: 1.2rem;
   padding: 3rem;
   min-height: 30vh;
 }
+.content article h3 {
+  margin: 0;
+  margin-bottom: 1.5rem;
+  padding: 0;
+  font-size: 6rem;
+  font-family: "Amatic SC", cursive;
+}
 @media (min-width: 1200px) {
   .content article:first-child {
     position: absolute;
-    top: 30%;
+    top: 10%;
     width: 50%;
     font-size: 1.5rem;
     background-color: transparent;
@@ -282,6 +291,7 @@ main {
 }
 
 .content--article__secondary {
+  clip-path: polygon(0 0%, 100% 7%, 100% 93%, 0% 100%);
   background-color: #ffee00;
 }
 
