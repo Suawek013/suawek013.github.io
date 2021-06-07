@@ -231,7 +231,7 @@ main {
 }
 @media (min-width: 1200px) {
   .main--background-container {
-    height: 80vh;
+    height: 90vh;
   }
   .main--background-container::before {
     clip-path: circle(50%);
@@ -261,7 +261,7 @@ main {
 }
 .content article {
   font-size: 1.2rem;
-  padding: 3rem;
+  padding: 4rem;
   min-height: 30vh;
 }
 .content article h3 {
@@ -293,6 +293,24 @@ main {
 .content--article__secondary {
   clip-path: polygon(0 0%, 100% 7%, 100% 93%, 0% 100%);
   background-color: #ffee00;
+}
+
+.card-skill {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.box-skill {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  align-items: center;
+  justify-content: space-between;
+}
+.box-skill svg {
+  width: 90px;
+  height: 90px;
 }
 
 footer {
