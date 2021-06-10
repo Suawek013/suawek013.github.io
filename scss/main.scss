@@ -81,6 +81,7 @@ font-family: "Quicksand", sans-serif; */
 /* font-family: 'Amatic SC', cursive;
 font-family: 'Caveat', cursive; <--- better*/
 body {
+	overscroll-behavior: none;
 	background-color: $main-color;
 	font-family: $font-main;
 	margin: 0;
@@ -152,6 +153,8 @@ ul {
 	font-size: 3rem;
 	font-family: $font-header;
 	margin: 0;
+	margin-right: 4rem;
+
 	a:hover {
 		color: $link-hover;
 	}
@@ -440,9 +443,9 @@ main {
 			}
 		}
 		.btn--mail {
-			background-color: #e99904;
+			background-color: #e9a104;
 			&:hover {
-				background-color: #d68e09;
+				background-color: #c78a08;
 			}
 		}
 	}

@@ -15,6 +15,7 @@ font-family: "Quicksand", sans-serif; */
 /* font-family: 'Amatic SC', cursive;
 font-family: 'Caveat', cursive; <--- better*/
 body {
+  overscroll-behavior: none;
   background-color: #353535;
   font-family: "Josefin Sans", sans-serif;
   margin: 0;
@@ -95,6 +96,7 @@ ul {
   font-size: 3rem;
   font-family: "Caveat", cursive;
   margin: 0;
+  margin-right: 4rem;
 }
 .logo h1 a:hover {
   color: #000;
@@ -388,10 +390,10 @@ main {
   background-color: #494949;
 }
 .box-contact .contact-links .btn--mail {
-  background-color: #e99904;
+  background-color: #e9a104;
 }
 .box-contact .contact-links .btn--mail:hover {
-  background-color: #d68e09;
+  background-color: #c78a08;
 }
 
 footer {
