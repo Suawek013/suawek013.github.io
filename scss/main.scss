@@ -179,6 +179,336 @@ a {
 	color: #fff;
 	transition: color 0.5s;
 }
+
+main {
+	grid-area: main;
+	overflow: hidden;
+	background-color: $main-color;
+}
+.main--background-container {
+	position: relative;
+
+	&::before {
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background: url(../resources/images/PortfolioEditedCutShadow.jpg) no-repeat;
+		background-size: cover;
+	}
+
+	@include phone() {
+		height: 75vh;
+
+		&::before {
+			clip-path: ellipse(90vw 60vh at 50% 18%);
+			background-position: 48% 50%;
+		}
+	}
+
+	@include tablet() {
+		height: 55vh;
+		// Skew to delete (unused with visibility not hidden)
+		&::before {
+			clip-path: ellipse(90vw 45vh at 50% 18%);
+			background-position: 46% 20%;
+		}
+	}
+	@include tablet-up() {
+		height: 60vh;
+		&::before {
+			clip-path: ellipse(90vw 55vh at 50% 5%);
+			background-position: 50% 5%;
+		}
+	}
+	@include desktop() {
+		height: 90vh;
+		min-height: 750px;
+		&::before {
+			clip-path: circle(50%);
+			width: 50%;
+			height: 102%;
+			right: 0;
+			background-size: contain;
+			background-position: 40vw 8vh;
+			background-attachment: fixed;
+		}
+	}
+	@include desktop-up() {
+		height: 80vh;
+		&::before {
+			width: 50%;
+			right: 0;
+			background-size: contain;
+			background-position: 38vw 8vh;
+			background-attachment: fixed;
+		}
+	}
+}
+
+.content {
+	background-color: $content-color;
+	article {
+		font-size: 1.2rem;
+		padding: 2rem;
+		min-height: 30vh;
+		@include tablet() {
+			padding: 4rem;
+		}
+	}
+
+	article h2 {
+		margin-bottom: 2rem;
+		padding: 0;
+		font-size: 4rem;
+		font-family: $font-subheader;
+		@include tablet() {
+			font-size: 5rem;
+		}
+	}
+	@include desktop() {
+		article:first-child {
+			position: absolute;
+			top: 10%;
+			width: 50%;
+			font-size: 1.5rem;
+			background-color: transparent;
+		}
+	}
+}
+.content--article__primary {
+	background-color: $primary-color;
+	color: white;
+	p,
+	h3 {
+		margin: 0;
+	}
+	h3 {
+		font-size: 1.5rem;
+		@include tablet() {
+			font-size: 2rem;
+		}
+	}
+	h2 {
+		margin: 0;
+	}
+}
+.content--article__secondary {
+	clip-path: polygon(0 5%, 100% 0%, 100% 100%, 0% 95%);
+
+	background-color: $secondary-color;
+	h2 {
+		margin-top: 5rem;
+	}
+	p {
+	}
+	// @include desktop() {
+	// 	&:nth-child(2) {
+	// 		clip-path: none;
+	// 	}
+	// }
+}
+
+.card-skill {
+	border-radius: 0.5rem;
+	@include box-shadow(-1px, 1px, 10px, 1px, rgba(0, 0, 0, 0.466));
+	background-color: rgba(255, 255, 255, 0.514);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: auto;
+	margin-bottom: 5rem;
+	overflow: hidden;
+
+	@include tablet() {
+		padding: 2.5rem;
+	}
+	@include desktop {
+		padding: 3rem;
+		max-width: 60vw;
+	}
+	h4 {
+		width: 100%;
+		border-bottom: 2px solid rgba(0, 0, 0, 0.575);
+		padding: 1rem;
+		text-align: center;
+		font-size: 2rem;
+	}
+	.card-skill__icon {
+		display: flex;
+		justify-content: space-around;
+		width: 100%;
+		// Maybe for mobile view?
+		// justify-content: space-around;
+		flex-wrap: wrap;
+	}
+}
+
+.box-skill {
+	display: flex;
+	flex-direction: column;
+	padding: 1rem;
+	align-items: center;
+	justify-content: space-between;
+
+	img {
+		width: 90px;
+		height: 90px;
+	}
+}
+
+.box-contact {
+	// background: url(../resources/icons/email.svg) no-repeat;
+
+	display: flex;
+	justify-content: space-around;
+	padding: 1rem;
+	align-items: center;
+	flex-wrap: wrap;
+	img {
+		width: 40px;
+		height: 40px;
+	}
+	.contact-info {
+		h4 {
+			opacity: 0.8;
+		}
+	}
+	.contact-mail {
+		// background: url(../resources/icons/email.svg) no-repeat 50%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 2rem;
+		border: 1px solid white;
+		width: 300px;
+		height: 100px;
+		transition: 0.5s;
+		&:hover {
+			border-radius: 4rem;
+			background-color: rgba(0, 0, 0, 0.212);
+			cursor: pointer;
+		}
+	}
+	.contact-links {
+		margin-top: 3rem;
+		display: flex;
+		flex-direction: column-reverse;
+		button {
+			font-size: 0.9rem;
+			padding: 0.3rem 1rem;
+			background-color: gray;
+			border: none;
+			border-radius: 5px;
+			margin: 1rem;
+			transition: 0.5s;
+			font-weight: 600;
+			text-transform: uppercase;
+			font-family: MontSerrat, Tahoma, Arial, sans-serif;
+			@include box-shadow(0, 0, 0.125rem, 0.25rem, rgba(0, 0, 0, 0.062));
+			&:hover {
+				cursor: pointer;
+			}
+		}
+		a {
+			display: flex;
+			align-items: center;
+			justify-content: start;
+			span {
+				margin: 0.5rem;
+			}
+		}
+		.btn--cv {
+			a {
+			}
+			// background-color: rgb(255, 174, 0);
+			background-color: rgb(255, 0, 85);
+			&:hover {
+				background-color: rgb(216, 11, 79);
+			}
+		}
+		.btn--linkedin {
+			background-color: #0077b5;
+			&:hover {
+				background-color: #016296;
+			}
+		}
+		.btn--github {
+			background-color: #4f4f4f;
+			&:hover {
+				background-color: #494949;
+			}
+		}
+		.btn--mail {
+			background-color: #e99904;
+			&:hover {
+				background-color: #d68e09;
+			}
+		}
+	}
+}
+
+footer {
+	grid-area: footer;
+	background-color: $footer-color;
+	color: #fff;
+	padding: 1rem;
+	text-align: center;
+}
+
+// menu burger icon & e-mail box
+.article--email-box {
+	text-align: center;
+	margin: 5rem 0;
+}
+.centered-container {
+	background-color: rgba(0, 0, 0, 0.075);
+	color: black;
+	display: inline-flex;
+	border-radius: 0.125rem;
+	border: 1.5px solid rgba(255, 255, 255, 0.253);
+	box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.04);
+	cursor: pointer;
+	transition: 0.5s;
+	font-size: 1.4rem;
+
+	&:hover {
+		border-radius: 2rem;
+		background-color: rgba(0, 0, 0, 0.212);
+	}
+	&:hover .arrow-icon {
+		transform: translate3d(5px, 0, 0);
+	}
+	&:hover .arrow-icon--circle {
+		stroke-dashoffset: 0;
+	}
+}
+
+.link {
+	color: #ffffff;
+	// color: #2175ff;
+
+	font-weight: 400;
+	text-decoration: none;
+}
+
+.link--arrowed {
+	display: inline-block;
+	padding: 1.5rem 2rem;
+	line-height: 2rem;
+	.arrow-icon {
+		position: relative;
+		top: -1px;
+		transition: transform 0.3s ease;
+		vertical-align: middle;
+	}
+	.arrow-icon--circle {
+		transition: stroke-dashoffset 0.3s ease;
+		stroke-dasharray: 95;
+		stroke-dashoffset: 95;
+	}
+}
+
 .menu-btn {
 	position: absolute;
 	top: 0;
@@ -232,201 +562,4 @@ a {
 	.menu-btn__burger::after {
 		transform: rotate(-45deg) translate(35px, 35px);
 	}
-}
-
-main {
-	grid-area: main;
-	overflow: hidden;
-	background-color: $main-color;
-}
-.main--background-container {
-	position: relative;
-
-	&::before {
-		content: "";
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		background: url(../resources/images/PortfolioEditedCutShadow.jpg) no-repeat;
-		background-size: cover;
-	}
-
-	@include phone() {
-		height: 75vh;
-
-		&::before {
-			clip-path: ellipse(90vw 60vh at 50% 18%);
-			background-position: 48% 50%;
-		}
-	}
-
-	@include tablet() {
-		height: 55vh;
-		// Skew to delete (unused with visibility not hidden)
-		&::before {
-			clip-path: ellipse(90vw 45vh at 50% 18%);
-			background-position: 46% 20%;
-		}
-	}
-	@include tablet-up() {
-		height: 60vh;
-		&::before {
-			clip-path: ellipse(90vw 55vh at 50% 5%);
-			background-position: 50% 5%;
-		}
-	}
-	@include desktop() {
-		height: 90vh;
-		&::before {
-			clip-path: circle(50%);
-			width: 50%;
-			height: 110%;
-			right: 0;
-			background-size: contain;
-			background-position: 40vw 8vh;
-			background-attachment: fixed;
-		}
-	}
-	@include desktop-up() {
-		height: 80vh;
-		&::before {
-			width: 50%;
-			right: 0;
-			background-size: contain;
-			background-position: 38vw 8vh;
-			background-attachment: fixed;
-		}
-	}
-}
-
-.content {
-	background-color: $content-color;
-	article {
-		font-size: 1.2rem;
-		padding: 4rem;
-		min-height: 30vh;
-	}
-
-	article h2 {
-		margin: 0;
-		margin-bottom: 2rem;
-		padding: 0;
-		font-size: 6rem;
-		font-family: $font-subheader;
-	}
-	@include desktop() {
-		article:first-child {
-			position: absolute;
-			top: 10%;
-			width: 50%;
-			font-size: 1.5rem;
-			background-color: transparent;
-		}
-	}
-}
-.content--article__primary {
-	background-color: $primary-color;
-	color: white;
-	p,
-	h3 {
-		margin: 0;
-	}
-	h3 {
-		font-size: 2.5rem;
-	}
-}
-.content--article__secondary {
-	clip-path: polygon(0 0%, 100% 5%, 100% 95%, 0% 100%);
-	background-color: $secondary-color;
-}
-
-.card-skill {
-	border-radius: 0.5rem;
-	@include box-shadow(-1px, 1px, 10px, 1px, rgba(0, 0, 0, 0.466));
-	background-color: rgba(255, 255, 255, 0.514);
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	margin: auto;
-	margin-bottom: 5rem;
-	overflow: hidden;
-
-	@include tablet() {
-		padding: 2.5rem;
-	}
-	@include desktop {
-		padding: 3rem;
-		max-width: 60vw;
-	}
-	h4 {
-		width: 100%;
-		border-bottom: 2px solid rgba(0, 0, 0, 0.575);
-		padding: 1rem;
-		text-align: center;
-		font-size: 2rem;
-	}
-	.card-skill__icon {
-		display: flex;
-		justify-content: space-around;
-		width: 100%;
-		// Maybe for mobile view?
-		// justify-content: space-around;
-		flex-wrap: wrap;
-	}
-}
-
-.box-skill {
-	display: flex;
-	flex-direction: column;
-	padding: 1rem;
-	align-items: center;
-	justify-content: space-between;
-
-	img {
-		width: 90px;
-		height: 90px;
-	}
-}
-
-.box-contact {
-	display: flex;
-	justify-content: space-around;
-	padding: 1rem;
-	align-items: center;
-	flex-wrap: wrap;
-	img {
-		width: 50px;
-		height: 50px;
-	}
-	.contact-mail {
-		font-size: 2rem;
-		border: 1px solid white;
-		padding: 6rem;
-		border-radius: 50%;
-		transition: 0.4s;
-		&:hover {
-			cursor: pointer;
-			border-radius: 0%;
-		}
-	}
-	.contact-links {
-		margin-top: 3rem;
-		display: flex;
-		flex-direction: column;
-		p {
-			padding: 1rem;
-		}
-		a {
-			display: flex;
-			align-items: center;
-		}
-	}
-}
-
-footer {
-	grid-area: footer;
-	background-color: $footer-color;
-	color: #fff;
-	padding: 1rem;
-	text-align: center;
 }

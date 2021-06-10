@@ -11,6 +11,12 @@
 			href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Caveat&family=Josefin+Sans:wght@100;200;300;400&family=Open+Sans+Condensed:wght@300&family=Quicksand:wght@300;400;500&display=swap"
 			rel="stylesheet"
 		/>
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap"
+			rel="stylesheet"
+		/>
 	</head>
 	<body>
 		<header>
@@ -25,9 +31,7 @@
 					<li class="item"><a href="#projects">Portfolio</a></li>
 					<li class="item"><a href="#skills">Skills</a></li>
 					<li class="item"><a href="#contact">Contact</a></li>
-					<li class="item">
-						<a href="./pages/cv.html">Curriculum Vitae</a>
-					</li>
+
 					<div class="menu-btn">
 						<div class="menu-btn__burger"></div>
 					</div>
@@ -64,6 +68,40 @@
 						<span class="text--primary">graphic design</span>, and
 						<span class="text--secondary">video game development</span>.
 					</p>
+					<div class="article--email-box">
+						<div class="centered-container">
+							<a
+								class="link link--arrowed"
+								href="mailto:sojkaslawek123@gmail.com"
+								>Email Me
+								<svg
+									class="arrow-icon"
+									xmlns="http://www.w3.org/2000/svg"
+									width="45"
+									height="45"
+									viewBox="0 0 32 32"
+								>
+									<g
+										fill="none"
+										stroke="#e99904"
+										stroke-width="1.5"
+										stroke-linejoin="round"
+										stroke-miterlimit="10"
+									>
+										<circle
+											class="arrow-icon--circle"
+											cx="16"
+											cy="16"
+											r="15.12"
+										></circle>
+										<path
+											class="arrow-icon--arrow"
+											d="M16.14 9.93L22.21 16l-6.07 6.07M8.23 16h13.98"
+										></path>
+									</g></svg
+							></a>
+						</div>
+					</div>
 				</article>
 				<article class="content--article__secondary" id="experience">
 					<h2>Experience</h2>
@@ -129,9 +167,7 @@
 					</p>
 				</article>
 				<article class="content--article__secondary" id="skills">
-					<span class="article-header__dot">
-						<h2>Skills</h2>
-					</span>
+					<h2>Skills</h2>
 
 					<div class="card-skill">
 						<h4>Programming languages</h4>
@@ -248,36 +284,50 @@
 				<article class="content--article__primary" id="contact">
 					<h2>Contact</h2>
 					<div class="box-contact">
-						<div class="contact-mail">
-							<p><a href="mailto:sojkaslawek123@gmail.com">E-mail me</a></p>
+						<div class="contact-info">
+							<h3>Let's work together</h3>
+							<h4>I'll be glad to answer your questions</h4>
+							<div class="contact-mail">
+								<p>
+									<a href="mailto:sojkaslawek123@gmail.com"> Get in Touch</a>
+								</p>
+							</div>
 						</div>
+
 						<div class="contact-links">
-							<p>
-								<a href="./pages/cv.html"
-									><img src="./resources/icons/cv.svg" alt="" /> Curriculum
-									vitae</a
+							<button class="btn--mail">
+								<a href="mailto:sojkaslawek123@gmail.com"
+									><img src="./resources/icons/email.svg" alt="" />
+									<span>sojkaslawek123@gmail.com</span></a
 								>
-							</p>
-							<p>
-								<a href="https://www.github.com/suawek013"
-									><img src="./resources/icons/github-original.svg" alt="" />
-									GitHub</a
+							</button>
+							<button class="btn--cv">
+								<a href="./pages/cv.html" target="_blank">
+									<img src="./resources/icons/cv.svg" alt="" />
+									<span>Curriculum vitae</span></a
 								>
-							</p>
-							<p>
+							</button>
+							<button class="btn--linkedin">
 								<a
 									href="https://www.linkedin.com/in/s%C5%82awomir-sojka-877ba4213/"
+									target="_blank"
 									><img src="./resources/icons/linkedin-original.svg" alt="" />
-									Linkedin
+									<span>Linkedin</span>
 								</a>
-							</p>
+							</button>
+							<button class="btn--github">
+								<a href="https://www.github.com/suawek013" target="_blank"
+									><img src="./resources/icons/github-white.svg" alt="" />
+									<span>GitHub</span></a
+								>
+							</button>
 						</div>
 					</div>
 				</article>
 			</section>
 		</main>
 		<footer>
-			<p>2021 - Sławomir Sojka</p>
+			<p>&copy; 2021 Sławomir Sojka.</p>
 		</footer>
 	</body>
 </html>
