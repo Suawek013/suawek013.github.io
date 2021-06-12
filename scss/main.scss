@@ -81,7 +81,6 @@ font-family: "Quicksand", sans-serif; */
 /* font-family: 'Amatic SC', cursive;
 font-family: 'Caveat', cursive; <--- better*/
 body {
-	overscroll-behavior: none;
 	background-color: $main-color;
 	font-family: $font-main;
 	margin: 0;
@@ -297,19 +296,14 @@ main {
 	}
 }
 .content--article__secondary {
-	clip-path: polygon(0 5%, 100% 0%, 100% 100%, 0% 95%);
-
+	clip-path: polygon(0 25px, 100% 0%, 100% 100%, 0% 95%);
 	background-color: $secondary-color;
 	h2 {
 		margin-top: 5rem;
 	}
 	p {
+		margin-bottom: 3rem;
 	}
-	// @include desktop() {
-	// 	&:nth-child(2) {
-	// 		clip-path: none;
-	// 	}
-	// }
 }
 
 .card-skill {
@@ -341,9 +335,15 @@ main {
 		display: flex;
 		justify-content: space-around;
 		width: 100%;
-		// Maybe for mobile view?
-		// justify-content: space-around;
 		flex-wrap: wrap;
+	}
+	&:last-child {
+		margin-bottom: 15rem;
+	}
+	@include tablet-up() {
+		&:last-child {
+			margin-bottom: 5rem;
+		}
 	}
 }
 
@@ -422,8 +422,6 @@ main {
 			}
 		}
 		.btn--cv {
-			a {
-			}
 			// background-color: rgb(255, 174, 0);
 			background-color: rgb(255, 0, 85);
 			&:hover {
@@ -489,8 +487,6 @@ footer {
 
 .link {
 	color: #ffffff;
-	// color: #2175ff;
-
 	font-weight: 400;
 	text-decoration: none;
 }

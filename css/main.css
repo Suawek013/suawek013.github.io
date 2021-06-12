@@ -15,7 +15,6 @@ font-family: "Quicksand", sans-serif; */
 /* font-family: 'Amatic SC', cursive;
 font-family: 'Caveat', cursive; <--- better*/
 body {
-  overscroll-behavior: none;
   background-color: #353535;
   font-family: "Josefin Sans", sans-serif;
   margin: 0;
@@ -255,12 +254,16 @@ main {
 }
 
 .content--article__secondary {
-  clip-path: polygon(0 5%, 100% 0%, 100% 100%, 0% 95%);
+  clip-path: polygon(0 25px, 100% 0%, 100% 100%, 0% 95%);
   background-color: #ffee00;
 }
 .content--article__secondary h2 {
   margin-top: 5rem;
 }
+.content--article__secondary p {
+  margin-bottom: 3rem;
+}
+
 .card-skill {
   border-radius: 0.5rem;
   -webkit-box-shadow: -1px 1px 10px 1px rgba(0, 0, 0, 0.466);
@@ -297,6 +300,14 @@ main {
   justify-content: space-around;
   width: 100%;
   flex-wrap: wrap;
+}
+.card-skill:last-child {
+  margin-bottom: 15rem;
+}
+@media (min-width: 900px) {
+  .card-skill:last-child {
+    margin-bottom: 5rem;
+  }
 }
 
 .box-skill {
