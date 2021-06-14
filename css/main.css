@@ -310,6 +310,12 @@ main {
   text-align: center;
   font-size: 2rem;
 }
+.card .card-title a {
+  color: black;
+}
+.card .card-title a:hover {
+  color: rgba(0, 0, 0, 0.568);
+}
 .card .card-title .card-title__company {
   display: flex;
   align-items: center;
@@ -341,6 +347,13 @@ main {
   .card .card-content {
     padding: 3rem;
   }
+}
+.card .card-content em {
+  color: rgba(0, 0, 0, 0.788);
+  font-size: 1.2rem;
+}
+.card .card-content h5 {
+  font-size: 1.4rem;
 }
 .card .card-footer {
   background-color: rgba(0, 0, 0, 0.048);

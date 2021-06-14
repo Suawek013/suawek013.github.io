@@ -349,6 +349,12 @@ main {
 			text-align: center;
 			font-size: 2rem;
 		}
+		a {
+			color: black;
+			&:hover {
+				color: rgba(0, 0, 0, 0.568);
+			}
+		}
 
 		.card-title__company {
 			display: flex;
@@ -375,6 +381,13 @@ main {
 		}
 		@include desktop {
 			padding: 3rem;
+		}
+		em {
+			color: rgba(0, 0, 0, 0.788);
+			font-size: 1.2rem;
+		}
+		h5 {
+			font-size: 1.4rem;
 		}
 	}
 	.card-footer {
