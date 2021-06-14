@@ -1,6 +1,14 @@
+/* paragraphs */
+/* font-family: "Josefin Sans", sans-serif;
+font-family: "Open Sans Condensed", sans-serif;
+font-family: "Quicksand", sans-serif; */
+
+/* headings */
+/* 
+font-family: 'Caveat', cursive; <--- better*/
 $font-main: "Josefin Sans", sans-serif;
 $font-header: "Caveat", cursive;
-$font-subheader: "Amatic SC", cursive;
+$font-subheader: "Josefin Sans", sans-serif;
 $font-paragraph: "Quicksand", sans-serif;
 
 $header-color: #e99904;
@@ -72,14 +80,6 @@ $text-secondary: rgb(217, 255, 0);
 	box-sizing: border-box;
 }
 
-/* paragraphs */
-/* font-family: "Josefin Sans", sans-serif;
-font-family: "Open Sans Condensed", sans-serif;
-font-family: "Quicksand", sans-serif; */
-
-/* headings */
-/* font-family: 'Amatic SC', cursive;
-font-family: 'Caveat', cursive; <--- better*/
 body {
 	background-color: $main-color;
 	font-family: $font-main;
@@ -367,6 +367,7 @@ main {
 			font-size: 1.3rem;
 			padding: 2rem 0 0 1rem;
 			width: 100%;
+			font-weight: 600;
 			@include tablet-up() {
 				padding: 0 2rem 0 0;
 				width: 50%;
@@ -375,7 +376,7 @@ main {
 		}
 	}
 	.card-content {
-		padding: 0.5rem;
+		padding: 1rem;
 		@include tablet() {
 			padding: 2.5rem;
 		}
@@ -422,12 +423,7 @@ main {
 		text-align: center;
 		font-size: 2rem;
 	}
-	.card-skill__icon {
-		display: flex;
-		justify-content: space-around;
-		width: 100%;
-		flex-wrap: wrap;
-	}
+
 	&:last-child {
 		margin-bottom: 15rem;
 	}
@@ -436,18 +432,72 @@ main {
 			margin-bottom: 5rem;
 		}
 	}
+	.box-skill {
+		img {
+			width: 90px;
+			height: 90px;
+		}
+	}
 }
-
+.card-skill__icon {
+	display: flex;
+	justify-content: space-around;
+	width: 100%;
+	flex-wrap: wrap;
+}
 .box-skill {
 	display: flex;
 	flex-direction: column;
 	padding: 1rem;
 	align-items: center;
 	justify-content: space-between;
+}
 
-	img {
-		width: 90px;
-		height: 90px;
+.box-project {
+	display: flex;
+	flex-wrap: wrap;
+	@include desktop() {
+		flex-wrap: nowrap;
+	}
+	.content--image {
+		border-radius: 100px;
+		padding: 1rem;
+		height: 500px;
+		img {
+			border-radius: 15px;
+			height: 100%;
+		}
+	}
+	.box-project__content {
+		padding: 1.2rem;
+		display: flex;
+		flex-direction: column;
+
+		h3 {
+			font-size: 3rem;
+		}
+		span {
+			margin: 1rem 0 1rem 0;
+			font-style: italic;
+			color: rgba(255, 255, 255, 0.788);
+			font-size: 1.5rem;
+		}
+
+		.content--main {
+			padding: 2rem 0;
+		}
+		.content--technologies {
+		}
+		.box-skill img {
+			width: 50px;
+			height: 50px;
+		}
+		.box-skill p {
+			font-size: 1.1rem;
+			padding-top: 1rem;
+		}
+		.card-skill__icon {
+		}
 	}
 }
 

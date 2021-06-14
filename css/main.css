@@ -1,3 +1,10 @@
+/* paragraphs */
+/* font-family: "Josefin Sans", sans-serif;
+font-family: "Open Sans Condensed", sans-serif;
+font-family: "Quicksand", sans-serif; */
+/* headings */
+/* 
+font-family: 'Caveat', cursive; <--- better*/
 *,
 *:after,
 *:before {
@@ -7,13 +14,6 @@
   box-sizing: border-box;
 }
 
-/* paragraphs */
-/* font-family: "Josefin Sans", sans-serif;
-font-family: "Open Sans Condensed", sans-serif;
-font-family: "Quicksand", sans-serif; */
-/* headings */
-/* font-family: 'Amatic SC', cursive;
-font-family: 'Caveat', cursive; <--- better*/
 body {
   background-color: #353535;
   font-family: "Josefin Sans", sans-serif;
@@ -216,7 +216,7 @@ main {
   margin-bottom: 2rem;
   padding: 0;
   font-size: 4rem;
-  font-family: "Amatic SC", cursive;
+  font-family: "Josefin Sans", sans-serif;
 }
 @media (min-width: 600px) {
   .content article h2 {
@@ -327,6 +327,7 @@ main {
   font-size: 1.3rem;
   padding: 2rem 0 0 1rem;
   width: 100%;
+  font-weight: 600;
 }
 @media (min-width: 900px) {
   .card .card-title .card-title__work {
@@ -336,7 +337,7 @@ main {
   }
 }
 .card .card-content {
-  padding: 0.5rem;
+  padding: 1rem;
 }
 @media (min-width: 600px) {
   .card .card-content {
@@ -392,12 +393,6 @@ main {
   text-align: center;
   font-size: 2rem;
 }
-.card-skill .card-skill__icon {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-  flex-wrap: wrap;
-}
 .card-skill:last-child {
   margin-bottom: 15rem;
 }
@@ -405,6 +400,17 @@ main {
   .card-skill:last-child {
     margin-bottom: 5rem;
   }
+}
+.card-skill .box-skill img {
+  width: 90px;
+  height: 90px;
+}
+
+.card-skill__icon {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  flex-wrap: wrap;
 }
 
 .box-skill {
@@ -414,11 +420,50 @@ main {
   align-items: center;
   justify-content: space-between;
 }
-.box-skill img {
-  width: 90px;
-  height: 90px;
-}
 
+.box-project {
+  display: flex;
+  flex-wrap: wrap;
+}
+@media (min-width: 1200px) {
+  .box-project {
+    flex-wrap: nowrap;
+  }
+}
+.box-project .content--image {
+  border-radius: 100px;
+  padding: 1rem;
+  height: 500px;
+}
+.box-project .content--image img {
+  border-radius: 15px;
+  height: 100%;
+}
+.box-project .box-project__content {
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+}
+.box-project .box-project__content h3 {
+  font-size: 3rem;
+}
+.box-project .box-project__content span {
+  margin: 1rem 0 1rem 0;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.788);
+  font-size: 1.5rem;
+}
+.box-project .box-project__content .content--main {
+  padding: 2rem 0;
+}
+.box-project .box-project__content .box-skill img {
+  width: 50px;
+  height: 50px;
+}
+.box-project .box-project__content .box-skill p {
+  font-size: 1.1rem;
+  padding-top: 1rem;
+}
 .box-contact {
   display: flex;
   justify-content: space-around;
