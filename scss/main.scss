@@ -262,7 +262,7 @@ main {
 	article h2 {
 		margin-bottom: 2rem;
 		padding: 0;
-		font-size: 4rem;
+		font-size: 3rem;
 		font-family: $font-subheader;
 		@include tablet() {
 			font-size: 5rem;
@@ -390,6 +390,9 @@ main {
 		h5 {
 			font-size: 1.4rem;
 		}
+		a {
+			color: $text-primary;
+		}
 	}
 	.card-footer {
 		background-color: rgba(0, 0, 0, 0.048);
@@ -453,26 +456,45 @@ main {
 	justify-content: space-between;
 }
 
+article.box-project {
+	padding: 0;
+}
+
 .box-project {
+	margin-top: 5rem;
 	display: flex;
 	flex-wrap: wrap;
-	@include desktop() {
+	align-items: center;
+
+	@include tablet-up() {
+		align-items: unset;
 		flex-wrap: nowrap;
 	}
 	.content--image {
-		border-radius: 100px;
-		padding: 1rem;
-		height: 500px;
+		padding: 3rem;
+		height: 100%;
+		@include tablet-up() {
+			align-items: unset;
+
+			width: 50%;
+		}
 		img {
 			border-radius: 15px;
-			height: 100%;
+			height: auto;
+			max-width: 100%;
 		}
 	}
+
 	.box-project__content {
-		padding: 1.2rem;
 		display: flex;
 		flex-direction: column;
+		align-items: center;
+		@include tablet-up() {
+			align-items: unset;
+			margin-top: 3rem;
 
+			width: 50%;
+		}
 		h3 {
 			font-size: 3rem;
 		}
@@ -481,6 +503,9 @@ main {
 			font-style: italic;
 			color: rgba(255, 255, 255, 0.788);
 			font-size: 1.5rem;
+		}
+		p {
+			margin-bottom: 1rem;
 		}
 
 		.content--main {
@@ -501,6 +526,13 @@ main {
 	}
 }
 
+#contact {
+	h2 {
+		margin-left: 0.3rem;
+		margin-bottom: 4rem;
+	}
+}
+
 .box-contact {
 	// background: url(../resources/icons/email.svg) no-repeat;
 
@@ -513,6 +545,7 @@ main {
 		width: 40px;
 		height: 40px;
 	}
+
 	.contact-info {
 		h4 {
 			opacity: 0.8;
@@ -564,6 +597,8 @@ main {
 		}
 		.btn--cv {
 			// background-color: rgb(255, 174, 0);
+			display: none;
+			// May be changed later to resume
 			background-color: rgb(255, 0, 85);
 			&:hover {
 				background-color: rgb(216, 11, 79);
