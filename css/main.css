@@ -146,7 +146,7 @@ main {
 }
 @media (max-width: 599px) {
   .main--background-container {
-    height: 75vh;
+    height: 50vh;
   }
   .main--background-container::before {
     clip-path: ellipse(90vw 60vh at 50% 18%);
@@ -155,7 +155,7 @@ main {
 }
 @media (min-width: 600px) {
   .main--background-container {
-    height: 55vh;
+    height: 50vh;
   }
   .main--background-container::before {
     clip-path: ellipse(90vw 45vh at 50% 18%);
@@ -164,7 +164,7 @@ main {
 }
 @media (min-width: 900px) {
   .main--background-container {
-    height: 60vh;
+    height: 50vh;
   }
   .main--background-container::before {
     clip-path: ellipse(90vw 55vh at 50% 5%);
@@ -173,7 +173,7 @@ main {
 }
 @media (min-width: 1200px) {
   .main--background-container {
-    height: 90vh;
+    height: 50vh;
     min-height: 750px;
   }
   .main--background-container::before {
@@ -188,7 +188,7 @@ main {
 }
 @media (min-width: 1800px) {
   .main--background-container {
-    height: 80vh;
+    height: 50vh;
   }
   .main--background-container::before {
     width: 50%;
@@ -206,6 +206,11 @@ main {
   font-size: 1.2rem;
   padding: 2rem;
   min-height: 30vh;
+}
+@media (max-width: 599px) {
+  .content article {
+    padding: 1.5rem;
+  }
 }
 @media (min-width: 600px) {
   .content article {
@@ -323,6 +328,12 @@ main {
 .card .card-title .card-title__company h4 {
   padding: 0 2rem;
 }
+@media (max-width: 599px) {
+  .card .card-title .card-title__company {
+    gap: 1rem;
+    flex-direction: column;
+  }
+}
 .card .card-title .card-title__work {
   font-size: 1.3rem;
   padding: 2rem 0 0 1rem;
@@ -338,6 +349,11 @@ main {
 }
 .card .card-content {
   padding: 1rem;
+}
+@media (max-width: 599px) {
+  .card .card-content {
+    padding: 2rem;
+  }
 }
 @media (min-width: 600px) {
   .card .card-content {
@@ -696,6 +712,14 @@ footer {
 }
 .menu-btn.open .menu-btn__burger::after {
   transform: rotate(-45deg) translate(35px, 35px);
+}
+
+.website-link__color {
+  color: #ff00b3;
+  padding-top: 0.5rem;
+}
+.website-link__color:hover {
+  color: #ad0079;
 }
 
 /*# sourceMappingURL=main.css.map */

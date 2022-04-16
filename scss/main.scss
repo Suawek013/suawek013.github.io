@@ -20,6 +20,7 @@ $secondary-color: rgb(255, 238, 0);
 $link-hover: #000;
 
 $text-primary: rgb(255, 0, 179);
+$text-primary__hover: rgb(173, 0, 121);
 $text-secondary: rgb(217, 255, 0);
 
 @mixin phone {
@@ -200,7 +201,7 @@ main {
 	}
 
 	@include phone() {
-		height: 75vh;
+		height: 50vh;
 
 		&::before {
 			clip-path: ellipse(90vw 60vh at 50% 18%);
@@ -209,7 +210,7 @@ main {
 	}
 
 	@include tablet() {
-		height: 55vh;
+		height: 50vh;
 		// Skew to delete (unused with visibility not hidden)
 		&::before {
 			clip-path: ellipse(90vw 45vh at 50% 18%);
@@ -217,14 +218,14 @@ main {
 		}
 	}
 	@include tablet-up() {
-		height: 60vh;
+		height: 50vh;
 		&::before {
 			clip-path: ellipse(90vw 55vh at 50% 5%);
 			background-position: 50% 5%;
 		}
 	}
 	@include desktop() {
-		height: 90vh;
+		height: 50vh;
 		min-height: 750px;
 		&::before {
 			clip-path: circle(50%);
@@ -237,7 +238,7 @@ main {
 		}
 	}
 	@include desktop-up() {
-		height: 80vh;
+		height: 50vh;
 		&::before {
 			width: 50%;
 			right: 0;
@@ -254,6 +255,9 @@ main {
 		font-size: 1.2rem;
 		padding: 2rem;
 		min-height: 30vh;
+		@include phone() {
+			padding: 1.5rem;
+		}
 		@include tablet() {
 			padding: 4rem;
 		}
@@ -362,6 +366,11 @@ main {
 			h4 {
 				padding: 0 2rem;
 			}
+
+			@include phone() {
+				gap: 1rem;
+				flex-direction: column;
+			}
 		}
 		.card-title__work {
 			font-size: 1.3rem;
@@ -377,6 +386,9 @@ main {
 	}
 	.card-content {
 		padding: 1rem;
+		@include phone() {
+			padding: 2rem;
+		}
 		@include tablet() {
 			padding: 2.5rem;
 		}
@@ -736,5 +748,12 @@ footer {
 	}
 	.menu-btn__burger::after {
 		transform: rotate(-45deg) translate(35px, 35px);
+	}
+}
+.website-link__color {
+	color: $text-primary;
+	padding-top: 0.5rem;
+	&:hover {
+		color: $text-primary__hover;
 	}
 }

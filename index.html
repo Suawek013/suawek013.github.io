@@ -17,6 +17,7 @@
 			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap"
 			rel="stylesheet"
 		/>
+		<link rel="icon" href="./resources/images/letter.png"
 	</head>
 	<body>
 		<header>
@@ -28,7 +29,9 @@
 					<li class="item">
 						<a href="#experience">Experience</a>
 					</li>
-					<li class="item"><a href="#projects">Portfolio</a></li>
+					<li class="item">
+						<a href="#projects">Portfolio</a>
+					</li>
 					<li class="item"><a href="#skills">Skills</a></li>
 					<li class="item"><a href="#contact">Contact</a></li>
 
@@ -70,7 +73,10 @@
 					</p>
 					<div class="article--email-box">
 						<div class="centered-container">
-							<a class="link link--arrowed" href="mailto:slawomir@sojka.codes"
+							<a
+								target="_blank"
+								class="link link--arrowed"
+								href="mailto:slawomir@sojka.codes"
 								>Email Me
 								<svg
 									class="arrow-icon"
@@ -106,10 +112,136 @@
 					<div class="card">
 						<div class="card-title">
 							<div class="card-title__company">
-								<a href="https://www.eplan-software.com/"
+								<a target="_blank" href="https://rocksoft.pl/"
+									><img
+										style="width: 150px; height: 112px"
+										src="./resources/images/rocksoft-icon.png"
+										alt="HTML"
+								/></a>
+								<a target="_blank" href="https://rocksoft.pl/"
+									><h4>Rocksoft</h4></a
+								>
+							</div>
+
+							<span class="card-title__work">Full Stack Developer</span>
+						</div>
+						<div class="card-content">
+							<span
+								><em>
+									Rocksoft is a company cooperating with foreign clients, where
+									work is strongly based on Scrum.</em
+								></span
+							>
+							<h5>PROJECT</h5>
+							<strong
+								><p>
+									Developing and managing a website for a client, a Norwegian
+									retail company.
+								</p></strong
+							>
+							<ul>
+								<li>
+									<p>
+										A web application, which displays a map with orders taken by
+										customers in real-time and showing them as a pin on the
+										world map.
+									</p>
+								</li>
+								<li>
+									<p>
+										<strong>Front End tools</strong>: HTML, CSS, React, React
+										Material-UI, JavaScript.
+									</p>
+								</li>
+
+								<li>
+									<p>
+										<strong>Back End tools</strong>: Node.js, Mongoose,
+										Express.js, MongoDB, Google API, AWS S3.
+									</p>
+								</li>
+							</ul>
+						</div>
+						<div class="card-footer">
+							<span>Nov 2021 - Jan 2022 (flexible work) | Ustroń, Poland</span>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card-title">
+							<div class="card-title__company">
+								<a target="_blank" href="https://rocksoft.pl/"
+									><img
+										style="width: 150px; height: 112px"
+										src="./resources/images/rocksoft-icon.png"
+										alt="HTML"
+								/></a>
+								<a target="_blank" href="https://rocksoft.pl/"
+									><h4>Rocksoft</h4></a
+								>
+							</div>
+
+							<span class="card-title__work"
+								>Internship - Full Stack Developer</span
+							>
+						</div>
+						<div class="card-content">
+							<span
+								><em>
+									Rocksoft is a company cooperating with foreign clients, where
+									work is strongly based on Scrum.</em
+								></span
+							>
+							<h5>PROJECT</h5>
+							<strong
+								><p>
+									creating a website application
+									<strong
+										><a
+											target="_blank"
+											href="https://todos-lists-app.herokuapp.com/"
+											>to-do list</a
+										></strong
+									>
+									, project that could help people plan their day-to-day
+									activities.
+								</p></strong
+							>
+							<ul>
+								<li>
+									<p>
+										A web application that is designed to help people in daily
+										management, via quick notes where tasks can be added as
+										checkboxes, and to-do lists for more complex tasks.
+									</p>
+								</li>
+								<li>
+									<p>
+										<strong>Front End tools</strong>: HTML, CSS, React, React
+										Material-UI, JavaScript.
+									</p>
+								</li>
+
+								<li>
+									<p>
+										<strong>Back End tools</strong>: Node.js, Mongoose,
+										Express.js, MongoDB, Google API.
+									</p>
+								</li>
+							</ul>
+						</div>
+						<div class="card-footer">
+							<span>Oct 2021 (full-time) | Ustroń, Poland</span>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card-title">
+							<div class="card-title__company">
+								<a target="_blank" href="https://www.eplan-software.com/"
 									><img src="./resources/icons/Eplan-logo.svg" alt="HTML"
 								/></a>
-								<a href="https://www.eplan-software.com/"><h4>EPLAN</h4></a>
+								<a target="_blank" href="https://www.eplan-software.com/"
+									><h4>EPLAN</h4></a
+								>
 							</div>
 
 							<span class="card-title__work"
@@ -154,7 +286,9 @@
 							</ul>
 						</div>
 						<div class="card-footer">
-							<span>Aug 2020 - Jun 2021 | Cieszyn, Śląskie</span>
+							<span
+								>Aug 2020 - Jun 2021 (4 hours a week) | Cieszyn, Poland</span
+							>
 						</div>
 					</div>
 				</article>
@@ -171,6 +305,12 @@
 						<div class="box-project__content">
 							<h3>Book rental</h3>
 							<span>Angular CRUD application</span>
+							<a
+								target="_blank"
+								href="https://angular-book-rental.herokuapp.com/"
+								class="website-link__color"
+								>CLICK TO VISIT</a
+							>
 							<div class="content--main">
 								<p>
 									An online <strong>book catalog</strong> designed for EPLAN
@@ -355,23 +495,25 @@
 					<div class="box-contact">
 						<div class="contact-info">
 							<h3>Let's work together</h3>
-							<h4>I'll be glad to answer your questions</h4>
+							<h4>I will be glad to answer your questions</h4>
 							<div class="contact-mail">
 								<p>
-									<a href="mailto:slawomir@sojka.codes"> Get in Touch</a>
+									<a target="_blank" href="mailto:slawomir@sojka.codes">
+										Get in Touch</a
+									>
 								</p>
 							</div>
 						</div>
 
 						<div class="contact-links">
 							<button class="btn--mail">
-								<a href="mailto:slawomir@sojka.codes"
+								<a target="_blank" href="mailto:slawomir@sojka.codes"
 									><img src="./resources/icons/email.svg" alt="" />
 									<span>slawomir@sojka.codes</span></a
 								>
 							</button>
 							<button class="btn--cv">
-								<a href="./pages/cv.html" target="_blank">
+								<a target="_blank" href="./pages/cv.html" target="_blank">
 									<img src="./resources/icons/cv.svg" alt="" />
 									<span>Curriculum vitae</span></a
 								>
@@ -385,7 +527,10 @@
 								</a>
 							</button>
 							<button class="btn--github">
-								<a href="https://www.github.com/suawek013" target="_blank"
+								<a
+									target="_blank"
+									href="https://www.github.com/suawek013"
+									target="_blank"
 									><img src="./resources/icons/github-white.svg" alt="" />
 									<span>GitHub</span></a
 								>
@@ -396,7 +541,14 @@
 			</section>
 		</main>
 		<footer>
-			<p>&copy; 2021 Sławomir Sojka.</p>
+			<p>&copy; 2022 Sławomir Sojka.</p>
+			<a
+				target="_blank"
+				style="opacity: 0.01; cursor: default"
+				href="https://www.flaticon.com/free-icons/letter"
+				title="letter icons"
+				>Letter icons created by Freepik - Flaticon</a
+			>
 		</footer>
 	</body>
 </html>
