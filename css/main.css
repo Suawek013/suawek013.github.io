@@ -445,10 +445,12 @@ article.box-project {
 }
 
 .box-project {
-  margin-top: 5rem;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+}
+.box-project:first-child {
+  margin-top: 100rem;
 }
 @media (min-width: 900px) {
   .box-project {

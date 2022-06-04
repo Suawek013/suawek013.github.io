@@ -473,10 +473,13 @@ article.box-project {
 }
 
 .box-project {
-	margin-top: 5rem;
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
+
+	&:first-child {
+		margin-top: 100rem;
+	}
 
 	@include tablet-up() {
 		align-items: unset;
