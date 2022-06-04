@@ -477,8 +477,8 @@ article.box-project {
 	flex-wrap: wrap;
 	align-items: center;
 
-	&:first-child {
-		margin-top: 100rem;
+	&:first-of-type {
+		margin-top: 5rem;
 	}
 
 	@include tablet-up() {

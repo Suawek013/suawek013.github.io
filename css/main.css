@@ -449,8 +449,8 @@ article.box-project {
   flex-wrap: wrap;
   align-items: center;
 }
-.box-project:first-child {
-  margin-top: 100rem;
+.box-project:first-of-type {
+  margin-top: 5rem;
 }
 @media (min-width: 900px) {
   .box-project {
